@@ -118,3 +118,81 @@ let items = document.getElementById('list-of-posts')
   })
 
 //Code for address-form-launchbook goes here
+let clearErrors = () => {
+  let errorElements = document.getElementsByClassName('error');
+  while (errorElements.length > 0) {
+    errorElements[0].remove();
+  }
+}
+
+let addressForm = document.mailingAddressForm
+
+addressForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  clearErrors();
+
+  const firstName = event.target.firstName.value
+  if (firstName === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.firstName.parentNode.appendChild(divElement)
+  }
+
+  const lastName = event.target.lastName.value
+  if (lastName === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.lastName.parentNode.appendChild(divElement)
+  }
+
+  const address = event.target.address.value
+  if (address === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.address.parentNode.appendChild(divElement)
+  }
+
+  const city = event.target.city.value
+  if (city === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.city.parentNode.appendChild(divElement)
+  }
+
+  const state = event.target.state.value
+  if (state === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.state.parentNode.appendChild(divElement)
+  }
+
+  const zipCode = event.target.zipCode.value
+  if (zipCode === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.zipCode.parentNode.appendChild(divElement)
+  }
+
+  const phoneNumber = event.target.phoneNumber.value
+  if (phoneNumber === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.phoneNumber.parentNode.appendChild(divElement)
+  }
+
+  const email = event.target.email.value
+  if (email === '') {
+    let divElement = document.createElement('div')
+    divElement.innerText = "can't be blank"
+    divElement.className = 'error'
+    event.target.email.parentNode.appendChild(divElement)
+  }
+
+})
